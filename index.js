@@ -5,7 +5,12 @@ let cors = require('cors');
 const app = express();
 const port = 3000;
 
-app.use(cors());
+const corsOptions = {
+  origin: 'https://bd2-listing-page.vercel.app', // Update with your actual frontend URL
+  optionsSuccessStatus: 200,
+};
+
+app.use(cors(corsOptions));
 let products = [
   {
     id: 1,
